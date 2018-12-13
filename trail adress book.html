@@ -1,0 +1,112 @@
+<html>
+<head>
+        <h1><b><i> Adress book</b></i></h1>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+</head>
+<body>
+        <style>
+                body {
+                    background-color: rgb(243, 141, 24)
+                }
+            </style>
+
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<ul id="myUL">
+  <li><a href="#">Chelan</a></li>
+  <li><a href="#">Bernard</a></li>
+
+  <li><a href="#">Douglas</a></li>
+  <li><a href="#">Constant</a></li>
+
+  <li><a href="#">Christiaan</a></li>
+  <li><a href="#">Jeroen</a></li>
+  <li><a href="#">René</a></li>
+  <li><a href="#"> Martijn</a></li>
+  <li><a href="#"> Marcella</a></li>
+  <li><a href="#">Richard</a></li>
+  <li><a href="#">Anke</a></li>
+  <li><a href="#">Simone</a></li>
+  <li><a href="#">Frans</a></li>
+  <li><a href="#"> Alex</a></li>
+  <li><a href="#">Paul</a></li>
+  <li><a href="#">Eline</a></li>
+  <li><a href="#">Bas</a></li>
+  <li><a href="#">Jan-Willem</a></li>
+  <li><a href="#">Jack</a></li>
+  <li><a href="#"> Maha</a></li>
+  <li><a href="#">Eef</a></li>
+  <li><a href="#">Semere</a></li>
+  <li><a href="#">Cristepher</a></li>
+  <li><a href="#"> Stas</a></li>
+  <li><a href="#">Gerd</a></li>
+  <li><a href="#">Dhiradj</a></li>
+  <li><a href="#">Maarten</a></li>
+  <li><a href="#">Bart</a></li>
+  <li><a href="#">Randalph</a></li>
+ 
+  
+
+
+</ul>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+
+</body>
+</html>
